@@ -1,9 +1,11 @@
-import './globals.css'
+import { Footer } from "../components/footer";
+import { Header } from "../components/header";
+import "./globals.css";
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang="en">
@@ -12,7 +14,15 @@ export default function RootLayout({
         head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
       */}
       <head />
-      <body>{children}</body>
+      <body>
+        <div>
+          <Header />
+          <main className="overflow-hidden page-gradient pt-navigation-height">
+            {children}
+          </main>
+          <Footer />
+        </div>
+      </body>
     </html>
-  )
+  );
 }
